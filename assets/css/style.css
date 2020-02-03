@@ -133,7 +133,7 @@ span{
      display: block;   
      transition: 0.5s
  }
-.social-media ul li .essam{
+.social-media ul li a{
      text-decoration: none;
      text-align: center;
      justify-content: center;
@@ -141,11 +141,11 @@ span{
      height: 60px;
      
  }
-.social-media  ul li .essam:hover{
-     background-color: rgb(207, 42, 42);
+.social-media  ul li a:hover{
+    text-shadow: 0 0 12px rgba(247, 244, 245, .8);
      
  }
- .social-media ul li .essam:before{
+ .social-media ul li a:before{
      content: "";
     
      background: #000;
@@ -154,10 +154,10 @@ span{
     transform: scale(0);
     transition: 0.5s;
  }
-.social-media ul li .essam:hover:before{
+.social-media ul li a:hover:before{
     transform: scale(1);
  }
- .social-media ul li:nth-child(1) .essam:hover:before{
+ .social-media ul li:nth-child(1) a:hover:before{
      background-color: #3b5999;
  }
 /* end social media css  */
