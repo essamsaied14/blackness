@@ -1,19 +1,24 @@
  /* global css  */
  @font-face {
     font-family: 'fancy-signature';
-    src: url('./fonts/Fancy\ Signature/Fancy Signature') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url('../css/fonts/Fancy\ Signature/Fancy Signature') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
      url('./fonts/Fancy\ Signature/Fancy Signature') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
   } 
 
   @font-face {
     font-family: 'roboto';
-    src: url('./fonts/Roboto/Roboto-Thin') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url('../css/fonts/Roboto/Roboto-Light.ttf') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
      url('./fonts/Roboto/Roboto-Light.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
   } 
   @font-face {
     font-family: 'roboto-regular';
-    src: url('./fonts/Roboto/Roboto-Thin') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url('./fonts/Roboto/Roboto-Regular.ttf') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
      url('./fonts/Roboto/Roboto-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  } 
+  @font-face {
+    font-family: 'roboto-fancy';
+    src: url('../css/fonts/Fancy\ Signature/') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+     url('./fonts/Fancy\ Signature/Fancy Signature.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
   } 
  *{
      -webkit-box-sizing: border-box;
@@ -52,7 +57,10 @@
 }
 /* hove links menu  */
 .nav-link:hover{
-    text-shadow: 0 0 12px rgba(247, 244, 245, .9);
+    text-shadow: 1px 1px  12px rgba(247, 244, 245, .9);
+}
+.img-shadow{
+    box-shadow: -21px 24px 23px #000000;
 }
 /* hove links menu  */
  /* end header css  */
@@ -69,7 +77,7 @@ p{
 }
 /* strat content css */
 .content {
-    margin: 21px 5px;
+    margin: 21px 6px;
     text-transform: uppercase;
     font-family: roboto;
 }
@@ -82,17 +90,15 @@ p{
 
 }
 .title_content{
-    margin: 30px 0 30px 15px;
+    margin: 30px 0 30px 10px;
 
 }
 .download-section {
     margin-top: 45px;
-    margin-left: 25px;
+    margin-left: 6px;
 }
-.download-section div{
-    padding-left: 0px  ;
-    
-    
+.download-section div:not(.download-text){
+    padding-left: 0px;
 }
 .icon-title{
     text-transform: uppercase;
@@ -100,11 +106,7 @@ p{
 }
 .icon-sub-title{
     max-width: 35%;
-}
-
-span{
-    color: #FFF;
-
+    
 }
 .flaticon-download{
     transform: translate(-40% ,-40%);
@@ -112,13 +114,22 @@ span{
     text-shadow: 0 0 12px rgba(247, 244, 245, .8);
 
 }
+.company-name{
+    margin: 30px 25px;
+
+}
+.company-name p{
+    font-family: roboto-fancy;
+    font-size: 25px;
+    text-transform: capitalize;
+
+}
 /* end content css */
  /* strat social media css  */
  .social-media{
-    color: white;
     position: absolute;
-    bottom: 30%;
-    left: -30px;
+    bottom: 22%;
+    left: 0%;
     z-index: 1029;
  }
  .social-media ul{
@@ -126,13 +137,29 @@ span{
  }
 
  #arrow-element{
-     display: none;
+    display: none;
  }
- 
+ .flaticon-size:before{
+     font-size: 13px ;
+ }
+ .icon-flaticon{
+    margin-left: -2px;
+
+ }
  .social-media:hover #arrow-element{
-     display: block;   
-     transition: 0.5s
+    display: block;
+    -webkit-animation: slide-up .8s ease-out;
+    -moz-animation: slide-up .8s ease-out;
  }
+
+ @-webkit-keyframes slide-up {
+    0% { opacity: 0; -webkit-transform: translateY(100%); }   
+  100% { opacity: 1; -webkit-transform: translateY(0); }
+}
+@-moz-keyframes slide-up {
+    0% { opacity: 0; -moz-transform: translateY(100%); }   
+  100% { opacity: 1; -moz-transform: translateY(0); }
+}
 .social-media ul li a{
      text-decoration: none;
      text-align: center;
@@ -145,21 +172,19 @@ span{
     text-shadow: 0 0 12px rgba(247, 244, 245, .8);
      
  }
- .social-media ul li a:before{
-     content: "";
-    
-     background: #000;
-     border-radius: 50%; 
-     z-index: -1;
-    transform: scale(0);
-    transition: 0.5s;
- }
-.social-media ul li a:hover:before{
-    transform: scale(1);
- }
- .social-media ul li:nth-child(1) a:hover:before{
-     background-color: #3b5999;
- }
+ @media only screen
+and (max-width : 1300px) {
+    .social-media{
+        left: -3%;
+    }
+}
+@media only screen
+and (max-width : 1020px) {
+    .social-media{
+        left: -5%;
+    }
+}
+
 /* end social media css  */
  
 
